@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+          background-color:  #040607;
+        }
+        h1, h2, p {
+          color: #fff;
+          font-family: Tahoma, Arial;
+        }
+        table {
+            border-spacing: 1px;
+            color: #fff;
+            font-family: Tahoma, Arial;
+        }
+        td {
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+        .container {
+          display: grid;
+          grid-template-columns: [first-start] 400px [first-end] auto [end];
+          grid-template-rows: [row1-start] 25% [row1-end] auto [last-line];
+        }
+        .header {
+          grid-column-start: first-start;
+          grid-column-end: end;
+          grid-row-start: row1-start;
+          grid-row-end: row1-end;
+        } 
+        .nav {
+          grid-column-start: first-start;
+          grid-column-end: first-end;
+          grid-row-start: row1-end;
+          grid-row-end: last-line;
+        }
+        .main {
+          grid-column-start: first-end;
+          grid-column-end: end;
+          grid-row-start: row1-end;
+          grid-row-end: last-line;
+        }
+        a:link {
+        color: #d6f0fc;
+        }
+        a:visited {
+        color:#66ccff;
+        }
+        a:hover {
+        color: #ff3300;
+        }
+        a:active {
+        color: blue;
+       }
+      </style>
+    <head>
+        <title>IT Salary - Comparison</title>
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "header">
+                <h1>IT Salary - Comparison</h1>
+            </div>
+
+            <div class = "nav">
+            <img style="max-width: 300px; height: auto; padding-top: 60px; padding-left: 20px; padding-right: auto;" src="{{ url_for('static', filename='images/ilustration.png') }}" />
+            </div>
+
+            <div class = "main">
+                <table>
+                <thead>
+                        <th style="width:300px; text-align: left;">Position</th>
+                        <th style="width:100px; text-align: center; font-size:80%">1st Quarter</th> 
+                        <th style="width:120px; text-align: center;">Median <br> (in PLN gross)</th>
+                        <th style="width:100px; text-align: center; font-size:80%">3rd Quarter</th>
+                    </thead>
+                {% for item in data %}
+                <tr>
+                    <td style="width:300px; text-align: left;">{{ item['sal_title'][0] }}</td>
+                    <td style="width:100px; text-align: center; font-size:80%">{{ item['sal_min'][0] }}</td> 
+                    <td style="width:120px; text-align: center;">{{ item['sal_mid'][0] }}</td>
+                    <td style="width:100px; text-align: center; font-size:80%">{{ item['sal_max'][0] }}</td>
+                </tr>
+                {% endfor %}
+                </table>
+                <p style="font-size:60%">Based on offers for Polish market published at the beginning of June 2023.</p>
+            </div>
+        </div>
+    </body>
+</html>
