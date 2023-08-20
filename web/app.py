@@ -7,7 +7,7 @@ def index():
     api_url = 'https://k6t1cu3qp7.execute-api.eu-west-1.amazonaws.com/items'  # Replace with the URL of the API you are using
     response = requests.get(api_url)
     data = response.json()
-    return render_template('index.html', data=data)
+    return render_template('index.html', data=sorted(data, key= lambda item: item['sal_title'][0]))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

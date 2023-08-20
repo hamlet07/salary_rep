@@ -71,7 +71,7 @@
     <body>
         <div class = "container">
             <div class = "header">
-                <h1>IT Salary - Comparison</h1>
+                <h1>Porównanie wynagrodzeń w IT</h1>
             </div>
 
             <div class = "nav">
@@ -81,10 +81,10 @@
             <div class = "main">
                 <table>
                 <thead>
-                        <th style="max-width:max-content; text-align: left; padding-left: 15px; padding-top: 5px; padding-bottom: 5px">POSITION</th>
-                        <th style="width:100px; text-align: right; padding-top: 5px; padding-bottom: 5px; font-size:80%; color:#ced4da;">1ST QUARTER</th> 
-                        <th style="width:120px; text-align: right; padding-top: 5px; padding-bottom: 5px;">MEDIAN</th>
-                        <th style="width:100px; text-align: right; padding-right: 15px; padding-top: 5px; padding-bottom: 5px; font-size:80%; color:#ced4da;">3RD QUARTER</th>
+                        <th style="max-width:max-content; text-align: left; padding-left: 15px; padding-top: 5px; padding-bottom: 5px">Stanowisko</th>
+                        <th style="width:100px; text-align: right; padding-top: 5px; padding-bottom: 5px; font-size:80%; color:#ced4da;">1. KWARTYL</th> 
+                        <th style="width:120px; text-align: right; padding-top: 5px; padding-bottom: 5px;">MEDIANA</th>
+                        <th style="width:100px; text-align: right; padding-right: 15px; padding-top: 5px; padding-bottom: 5px; font-size:80%; color:#ced4da;">3. KWARTYL</th>
                 </thead>
                 {% for item in data %}
                 <tr>
@@ -97,7 +97,7 @@
                 </table>
             </div>
             <div class = "footer">
-                <p style="font-size:80%">Salaries in PLN gross. Based on offers for Polish market published at the beginning of July 2023.</p>
+                <p style="font-size:80%">Wynagrodzenia w PLN brutto. Na podstawie ogłoszeń z {{ data[0].sal_date }}.</p>
             </div>
             </div>
         </div>
