@@ -1,1 +1,1 @@
-#Report available on: https://rtifdtcqjb.eu-west-1.awsapprunner.com/
+#Report available on: https://salary-report.hamlet07.link/
